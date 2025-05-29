@@ -42,13 +42,29 @@ Este projeto é uma aplicação web interativa que utiliza **Teachable Machine**
 
 4. Clique em `▶️ Iniciar detecção` para começar a usar.
 
-## 💡 Personalização
+## 📸 Capturas de Tela
 
-- Edite o estilo no `<style>` do `index.html` para alterar cores e animações.
-- Modifique o `threshold` no JavaScript para ajustar o nível de confiança mínimo:
-  ```js
-  let threshold = 0.9;
-  ```
+A seguir, algumas imagens da interface da aplicação de detecção binária em tempo real:
+
+### 🖥️ Interface principal
+Esta é a tela inicial do sistema. Ao abrir o site, a câmera começa a carregar automaticamente. O usuário pode iniciar ou parar a detecção, e também alternar entre o tema claro e escuro.
+
+![Interface Principal](./.png)
+
+- **Iniciar detecção:** ativa a webcam e o modelo para começar a classificar.
+- **Parar detecção:** pausa o funcionamento da IA.
+- **Mudar tema:** alterna entre visual escuro e claro para conforto visual.
+
+---
+
+### 📊 Exibição de Status e FPS
+Durante a detecção, é exibido em tempo real o **status da aplicação** e a **quantidade de quadros por segundo (FPS)** processados pelo modelo.
+
+![Status e FPS](./.png)
+
+- **Status:** mostra se a detecção está ativa ou aguardando.
+- **FPS:** indica o desempenho da análise em tempo real.
+
 
 ## 📌 Requisitos
 
