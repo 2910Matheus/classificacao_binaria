@@ -1,0 +1,172 @@
+/* Garante que padding e border não ultrapassem a largura do elemento */
+* {
+    box-sizing: border-box;
+}
+
+/* Estilização base do corpo com fundo animado escuro e centralização */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #121212, #1e1e1e, #212121);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+}
+
+/* Animação do gradiente de fundo */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Estilos para o tema claro */
+body.light {
+    background: #f4f4f4;
+    color: #111;
+}
+
+/* Container principal com efeito de vidro e centralizado */
+.container {
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Versão do container para tema claro */
+body.light .container {
+    background-color: white;
+    color: black;
+}
+
+/* Título dentro do container */
+.container > div:first-of-type {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Estilo dos botões */
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+/* Botão ao passar o mouse */
+button:hover {
+    background-color: #1565c0;
+}
+
+/* Canvas onde a pose será desenhada */
+canvas {
+    border: 4px solid #1e88e5;
+    border-radius: 8px;
+    background-color: black;
+}
+
+/* Container para as labels das classes preditas */
+#label-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Estilo visual de cada label */
+#label-container div {
+    background-color: #1e1e1e;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #00e676;
+    animation: fadeIn 0.5s ease;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de hover nas labels */
+#label-container div:hover {
+    transform: scale(1.05);
+}
+
+/* Animação de entrada para as labels */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo do texto de carregamento */
+#loader {
+    color: #1e88e5;
+    font-size: 18px;
+    margin-bottom: 20px;
+    animation: blink 1.2s infinite;
+}
+
+/* Animação de piscar */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* Painel com status e FPS */
+#info-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #1e1e1e;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #00e676;
+    font-family: monospace;
+    box-shadow: 0 0 10px rgba(0,255,0,0.2);
+}
+
+/* Versões em tema claro */
+body.light #label-container div {
+    background-color: #e0f2f1;
+    color: #00695c;
+}
+
+body.light #info-panel {
+    background-color: #e0f2f1;
+    color: #004d40;
+}
+
+/* Estilo responsivo para telas pequenas */
+@media (max-width: 500px) {
+    canvas {
+    width: 100%;
+    height: auto;
+    }
+
+    button {
+    width: 90%;
+    }
+
+    #info-panel {
+    position: static;
+    margin-top: 10px;
+    }
+}
