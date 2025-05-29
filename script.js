@@ -114,7 +114,7 @@ function toggleTheme() {
 }
 
   const loader = document.getElementById('loader');
-  const baseText = "Carregando câmera";
+  const baseText = "Aguardando iniciação";
   let dotCount = 0;
 
   setInterval(() => {
